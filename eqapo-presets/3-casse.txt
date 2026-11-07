@@ -1,0 +1,9 @@
+# casse (speakers) - made for small desk speakers.
+# Cuts the rumble they cannot reproduce (and that wastes excursion),
+# removes the boom the desk surface adds around 180 Hz,
+# and recovers some intelligibility and air.
+Preamp: -4.0 dB
+Filter: ON HPQ Fc 45 Hz Q 0.70
+Filter: ON PK  Fc 180 Hz Gain -3.0 dB Q 1.20
+Filter: ON PK  Fc 2500 Hz Gain 1.5 dB Q 1.00
+Filter: ON HSC Fc 9000 Hz Gain 2.0 dB Q 0.70

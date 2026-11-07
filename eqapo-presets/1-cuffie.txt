@@ -1,0 +1,11 @@
+# cuffie (headphones) - gentle Harman-style curve: a bit of body below, less mud
+# in the low mids, a touch of presence and air on top.
+# Generic starting point: tweak Gain and Fc with the Equalizer APO Editor.
+#
+# The Preamp is negative to leave headroom for the positive gains below:
+# without it, peaks go into digital clipping (harsh distortion).
+Preamp: -4.5 dB
+Filter: ON LSC Fc 57.55 Hz Gain 4 dB Q 0.7
+Filter: ON PK  Fc 220 Hz Gain -1.5 dB Q 1.00
+Filter: ON PK  Fc 3000 Hz Gain 1.5 dB Q 1.20
+Filter: ON HSC Fc 8000 Hz Gain 1.5 dB Q 0.70

@@ -1,0 +1,8 @@
+# voce (voice) - meetings, podcasts, dialogue in badly shot films.
+# Throws away everything below the human voice, scoops the "cardboard" at 300 Hz,
+# raises the consonant band and tames sibilance.
+Preamp: -3.0 dB
+Filter: ON HPQ Fc 90 Hz Q 0.70
+Filter: ON PK  Fc 300 Hz Gain -3.0 dB Q 1.00
+Filter: ON PK  Fc 2200 Hz Gain 3.0 dB Q 1.00
+Filter: ON HSC Fc 8000 Hz Gain -2.0 dB Q 0.70

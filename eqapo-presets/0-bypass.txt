@@ -1,0 +1,4 @@
+# bypass - no filter, transparent chain.
+# Useful for A/B comparison: if you hear no difference with the other presets,
+# the problem is not the equalization.
+Preamp: 0 dB

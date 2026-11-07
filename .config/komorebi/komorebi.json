@@ -1,0 +1,99 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
+  "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 5,
+  "default_container_padding": 5,
+  "border": true,
+  "border_implementation": "Komorebi",
+  "border_style": "Rounded",
+  "border_width": 4,
+  "border_offset": -1,
+  "border_colours": {
+    "single": "#DCD7BA",
+    "stack": "#76946A",
+    "monocle": "#957FB8",
+    "floating": "#C0A36E",
+    "unfocused": "#363646"
+  },
+  "mouse_follows_focus": true,
+  "transparency": true,
+  "transparency_alpha": 220,
+  "animation": {
+    "enabled": true,
+    "duration": 250,
+    "fps": 120,
+    "style": {
+      "movement": "EaseOutQuint",
+      "transparency": "Linear"
+    }
+  },
+  "stackbar": {
+    "height": 24,
+    "mode": "Never",
+    "label": "Title",
+    "tabs": {
+      "width": 200,
+      "font_size": 16
+    }
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "III",
+          "layout": "HorizontalStack"
+        },
+        {
+          "name": "IV",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "V",
+          "layout": "Rows"
+        },
+        {
+          "name": "VI",
+          "layout": "Grid"
+        },
+        {
+          "name": "VII",
+          "layout": "RightMainVerticalStack"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "T",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ],
+  "cross_boundary_behaviour": "Monitor",
+  "display_index_preferences": {
+    "0": "GSM7714-5&3101df77&0&UID4354",
+    "1": "HAT1330-5&3101df77&0&UID4352"
+  },
+  "ignore_rules": [
+    {
+      "kind": "Exe",
+      "id": "Flow.Launcher.exe"
+    },
+    {
+      "kind": "Title",
+      "id": "Windowsarchy - Temi",
+      "matching_strategy": "Equals"
+    }
+  ]
+}

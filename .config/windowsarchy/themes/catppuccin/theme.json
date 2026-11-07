@@ -1,0 +1,19 @@
+{
+  "name": "Catppuccin",
+  "subtitle": "Mocha",
+  "description": "Palette Catppuccin Mocha: blu e lavanda pastello su fondo scuro, barra con sfocatura. È anche uno dei temi ufficiali di Omarchy.",
+  "palette": {
+    "bg": "#1e1e2e",
+    "surface": "#45475a",
+    "text": "#cdd6f4",
+    "subtext": "#bac2de",
+    "accent": "#89b4fa"
+  },
+  "komorebi": {
+    "single": "#89b4fa",
+    "stack": "#a6e3a1",
+    "monocle": "#cba6f7",
+    "floating": "#fab387",
+    "unfocused": "#45475a"
+  }
+}

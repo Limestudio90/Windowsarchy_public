@@ -1,0 +1,19 @@
+{
+  "name": "KDE Breeze Dark",
+  "subtitle": "stable",
+  "description": "La configurazione storica: palette KDE Breeze, accento azzurro, barra con sfocatura.",
+  "palette": {
+    "bg": "#232629",
+    "surface": "#31363b",
+    "text": "#FFFFFF",
+    "subtext": "#bac2de",
+    "accent": "#3DAEE9"
+  },
+  "komorebi": {
+    "single": "#3DAEE9",
+    "stack": "#27AE60",
+    "monocle": "#9B59B6",
+    "floating": "#F67400",
+    "unfocused": "#31363b"
+  }
+}

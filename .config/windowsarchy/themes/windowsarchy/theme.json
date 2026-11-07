@@ -1,0 +1,19 @@
+{
+  "name": "Akira",
+  "subtitle": "Kanagawa",
+  "description": "Ispirato a i3: angoli a zero, barra piatta con separatori, palette Kanagawa. Il più vicino a Omarchy.",
+  "palette": {
+    "bg": "#1F1F28",
+    "surface": "#363646",
+    "text": "#DCD7BA",
+    "subtext": "#C8C093",
+    "accent": "#DCD7BA"
+  },
+  "komorebi": {
+    "single": "#DCD7BA",
+    "stack": "#76946A",
+    "monocle": "#957FB8",
+    "floating": "#C0A36E",
+    "unfocused": "#363646"
+  }
+}

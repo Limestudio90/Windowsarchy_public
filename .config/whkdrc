@@ -1,0 +1,159 @@
+.shell powershell
+
+# =====================================================================
+#  komorebi + whkd  —  key layout in the style of Omarchy / Hyprland
+#  Main modifier: WIN (Super)
+#
+#  WARNING: keys reserved by Windows, NOT interceptable:
+#    win + l  -> lock screen         win + g  -> Game Bar
+#    win + tab, win + e, win + r, win + s, win + d
+#  (win + space, on the other hand, whkd can grab: the launcher lives there)
+#  That is why directional focus/move uses the ARROW keys with Win,
+#  and every shortcut goes through Win: combinations without Super are left
+#  to the applications (DaVinci, Blender, Adobe...), see README.
+# =====================================================================
+
+# ---------------------------------------------------------------------
+#  Session / maintenance
+# ---------------------------------------------------------------------
+win + k                 : komorebic toggle-shortcuts                          # key cheatsheet
+win + shift + r         : komorebic reload-configuration
+win + ctrl + r          : komorebic retile
+win + p                 : komorebic toggle-pause; Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File $Env:USERPROFILE\.config\komorebi-scripts\yasb-resubscribe.ps1 -Quiet"   # when unpausing, re-attaches YASB if it was left offline
+win + ctrl + w          : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden   # reload whkd
+
+# ---------------------------------------------------------------------
+#  Apps
+# ---------------------------------------------------------------------
+win + return            : Start-Process wt
+win + space             : Start-Process "$Env:LOCALAPPDATA\FlowLauncher\Flow.Launcher.exe"   # app launcher + settings
+win + ctrl + shift + space : Start-Process powershell -WindowStyle Hidden -ArgumentList "-NoProfile -ExecutionPolicy Bypass -STA -File $Env:USERPROFILE\.config\komorebi-scripts\theme-menu.ps1"   # theme menu, like SUPER+SHIFT+CTRL+SPACE on Omarchy
+
+# ---------------------------------------------------------------------
+#  Active window
+# ---------------------------------------------------------------------
+win + w                 : komorebic close
+win + q                 : komorebic close
+win + m                 : komorebic minimize
+win + v                 : komorebic toggle-float
+win + f                 : komorebic toggle-monocle
+win + shift + return    : komorebic promote
+
+# ---------------------------------------------------------------------
+#  Focus  —  Win + arrows
+# ---------------------------------------------------------------------
+win + left              : komorebic focus left
+win + down              : komorebic focus down
+win + up                : komorebic focus up
+win + right             : komorebic focus right
+
+# ---------------------------------------------------------------------
+#  Move the window in the layout  —  Win + Shift + arrows
+# ---------------------------------------------------------------------
+win + shift + left      : komorebic move left
+win + shift + down      : komorebic move down
+win + shift + up        : komorebic move up
+win + shift + right     : komorebic move right
+
+# =====================================================================
+#  WORKSPACE  —  Win + number          (go to the virtual desktop)
+#  Komorebi workspaces are indexed from 0: win+1 -> index 0.
+#  They match the names I..VII defined in komorebi.json.
+# =====================================================================
+win + 1                 : komorebic focus-workspace 0
+win + 2                 : komorebic focus-workspace 1
+win + 3                 : komorebic focus-workspace 2
+win + 4                 : komorebic focus-workspace 3
+win + 5                 : komorebic focus-workspace 4
+win + 6                 : komorebic focus-workspace 5
+win + 7                 : komorebic focus-workspace 6
+
+# =====================================================================
+#  MOVE THE WINDOW TO A WORKSPACE  —  Win + Shift + number
+#  move-to-workspace = moves the window AND follows it (like Omarchy).
+#  If you prefer to stay where you are, use send-to-workspace instead.
+# =====================================================================
+win + shift + 1         : komorebic move-to-workspace 0
+win + shift + 2         : komorebic move-to-workspace 1
+win + shift + 3         : komorebic move-to-workspace 2
+win + shift + 4         : komorebic move-to-workspace 3
+win + shift + 5         : komorebic move-to-workspace 4
+win + shift + 6         : komorebic move-to-workspace 5
+win + shift + 7         : komorebic move-to-workspace 6
+
+# ---------------------------------------------------------------------
+#  Cycle through workspaces
+# ---------------------------------------------------------------------
+win + ctrl + right          : komorebic cycle-workspace next
+win + ctrl + left           : komorebic cycle-workspace previous
+win + ctrl + shift + right  : komorebic cycle-move-to-workspace next
+win + ctrl + shift + left   : komorebic cycle-move-to-workspace previous
+
+# ---------------------------------------------------------------------
+#  Stack (tabbed container) — komorebi specific
+#  On Win + Alt and not on Alt alone: DaVinci Resolve uses Alt + arrows, and
+#  whkd swallows the key as soon as it recognises the combination, in any app.
+#  "Resolve : Ignore" would not be enough: it skips the command, but the key is already swallowed.
+# ---------------------------------------------------------------------
+win + alt + left        : komorebic stack left
+win + alt + down        : komorebic stack down
+win + alt + up          : komorebic stack up
+win + alt + right       : komorebic stack right
+win + alt + oem_1       : komorebic unstack
+win + ctrl + up         : komorebic cycle-stack previous
+win + ctrl + down       : komorebic cycle-stack next
+
+# ---------------------------------------------------------------------
+#  Layout
+# ---------------------------------------------------------------------
+win + o                 : komorebic cycle-layout next
+win + shift + o         : komorebic cycle-layout previous
+win + x                 : komorebic flip-layout horizontal
+win + y                 : komorebic flip-layout vertical
+
+# ---------------------------------------------------------------------
+#  Resize
+# ---------------------------------------------------------------------
+win + oem_plus          : komorebic resize-axis horizontal increase
+win + oem_minus         : komorebic resize-axis horizontal decrease
+win + shift + oem_plus  : komorebic resize-axis vertical increase
+win + shift + oem_minus : komorebic resize-axis vertical decrease
+
+# ---------------------------------------------------------------------
+#  Gaps (padding) — Omarchy style
+# ---------------------------------------------------------------------
+win + ctrl + oem_plus   : komorebic adjust-workspace-padding increase 2; komorebic adjust-container-padding increase 2
+win + ctrl + oem_minus  : komorebic adjust-workspace-padding decrease 2; komorebic adjust-container-padding decrease 2
+
+# ---------------------------------------------------------------------
+#  Monitor
+# ---------------------------------------------------------------------
+win + oem_comma         : komorebic cycle-monitor previous
+win + oem_period        : komorebic cycle-monitor next
+win + shift + oem_comma : komorebic cycle-move-to-monitor previous
+win + shift + oem_period: komorebic cycle-move-to-monitor next
+
+# ---------------------------------------------------------------------
+#  Stuck transparency
+#  Komorebi sets alpha 220 on unfocused windows. If a window
+#  leaves management while still marked "unfocused" (typical after
+#  fullscreen) it stays semi-transparent forever: these keys fix it.
+# ---------------------------------------------------------------------
+win + shift + t         : & "$Env:USERPROFILE\.config\komorebi-scripts\fix-opacity.ps1"
+win + ctrl + t          : & "$Env:USERPROFILE\.config\komorebi-scripts\fix-opacity.ps1" -All
+
+# ---------------------------------------------------------------------
+#  System equalizer (Equalizer APO)
+#  No program needs to stay open: the filter lives inside
+#  audiodg.exe and these keys only rewrite the configuration file,
+#  which Equalizer APO reloads on the fly. The on-screen box lasts one second.
+#  win + e cannot be intercepted (File Explorer), hence ctrl and alt.
+#
+#  "eq" is eq.cmd in %USERPROFILE%\.local\bin (already in PATH), which calls
+#  .config\komorebi-scripts\eq.ps1. Calling powershell directly
+#  worked the same, but the win + k cheatsheet shows the command
+#  verbatim: you would read a truncated path instead of what the key does.
+# ---------------------------------------------------------------------
+win + ctrl + e          : eq next
+win + alt + e           : eq toggle
+win + shift + e         : eq edit

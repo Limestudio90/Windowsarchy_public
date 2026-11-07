@@ -1,0 +1,19 @@
+{
+  "name": "Ubuntu Yaru",
+  "subtitle": "arancio Ubuntu",
+  "description": "Palette Ubuntu Yaru: arancio Ubuntu e melanzana su grigio scuro, barra con sfocatura.",
+  "palette": {
+    "bg": "#282828",
+    "surface": "#404040",
+    "text": "#F7F7F7",
+    "subtext": "#DDDDDD",
+    "accent": "#E95420"
+  },
+  "komorebi": {
+    "single": "#E95420",
+    "stack": "#68B73B",
+    "monocle": "#AE2775",
+    "floating": "#F99B11",
+    "unfocused": "#404040"
+  }
+}

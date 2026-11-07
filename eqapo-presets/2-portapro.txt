@@ -1,0 +1,42 @@
+# portapro - Koss Porta Pro according to AutoEq.
+#
+# NOT a curve made by ear: it comes from the oratory1990 measurement
+# brought to the Harman over-ear 2018 target, generated automatically by
+# AutoEq. It is here as a reference against the hand-tuned preset.
+#
+#   https://github.com/jaakkopasanen/AutoEq
+#   results/oratory1990/over-ear/Koss Porta Pro/
+#
+# Read before judging it:
+#
+# - filters 1 and 2 work as a pair and do NOT add bass: they move it.
+#   The shelf at 105 Hz raises everything below by 9.2 dB, and the wide cut
+#   centred at 83 Hz (Q 0.47) removes 8.7 dB right in the boom zone.
+#   The net result is more extension below 50 Hz and less bloat in the
+#   low mids: the typical Porta Pro hump. Taken alone they look like absurd
+#   numbers, so do not disable just one out of curiosity: you would hear
+#   something unrelated to the intent of the curve.
+#
+# - the three gains between 6.7 and 10 kHz are the divisive part: it is the
+#   signature of the Harman target, and on these headphones it can sound sharp.
+#   If it tires you, lower them all together by 2-3 dB before throwing
+#   the rest away.
+#
+# - the Preamp is -7.9 dB because there are almost 10 dB of gain: it is the
+#   price of this kind of correction. Compared to the others it will sound
+#   quieter, and quieter does NOT mean worse.
+#
+# If you use Yaxi pads, AutoEq has a separate version: they change the
+# response enough to justify a different preset.
+
+Preamp: -7.9 dB
+Filter 1: ON LSC Fc 105 Hz Gain 9.2 dB Q 0.70
+Filter 2: ON PK Fc 83 Hz Gain -8.7 dB Q 0.47
+Filter 3: ON PK Fc 3336 Hz Gain 4.3 dB Q 4.55
+Filter 4: ON PK Fc 8898 Hz Gain 5.8 dB Q 2.75
+Filter 5: ON PK Fc 6711 Hz Gain 4.5 dB Q 4.32
+Filter 6: ON HSC Fc 10000 Hz Gain 4.5 dB Q 0.70
+Filter 7: ON PK Fc 4725 Hz Gain -3.8 dB Q 6.00
+Filter 8: ON PK Fc 1892 Hz Gain -1.6 dB Q 2.53
+Filter 9: ON PK Fc 658 Hz Gain 0.6 dB Q 1.45
+Filter 10: ON PK Fc 2756 Hz Gain 1.5 dB Q 4.62

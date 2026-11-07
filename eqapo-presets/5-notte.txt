@@ -1,0 +1,10 @@
+# notte (night) - "loudness" curve: at low volume the ear loses bass and treble
+# (equal-loudness contours), this puts them back so you hear everything quietly.
+#
+# Honest note: it is not a compressor, Equalizer APO alone does not have one.
+# It does not squash explosions, it just lets you hear whispers better.
+# The very negative Preamp is there to keep you at a low volume.
+Preamp: -8.0 dB
+Filter: ON LSC Fc 120 Hz Gain 6.0 dB Q 0.70
+Filter: ON PK  Fc 2800 Hz Gain 3.0 dB Q 1.00
+Filter: ON HSC Fc 10000 Hz Gain 3.0 dB Q 0.70
