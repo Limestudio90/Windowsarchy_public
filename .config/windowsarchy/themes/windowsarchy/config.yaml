@@ -317,10 +317,8 @@ widgets:
       show_unpinned: false
       show_unpinned_button: true
       show_battery: false
-      show_in_popup: 1
+      show_in_popup: true
       show_volume: false
-      show_network: true
-      use_hook: true
       icons_per_row: 3
       show_network: false
       use_hook: false # Whether to use the new systray hook instead of the legacy systray monitor
@@ -330,36 +328,20 @@ widgets:
         round_corners: true
         round_corners_type: "normal"
         border_color: None
-        alignment: "center"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\udb83\ude09</span>"
       image_path: 
-        - "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Catppuccin"
+        - "~/Pictures/Wallpapers"
       change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
       engine:
         enabled: true
         animation: "diamond" # circle/slide_top/diamond/split
       gallery:
-        enabled: true
-        blur: false
         image_width: 350
-        image_per_page: 6
-        gallery_columns: 0 # 0 = auto, matches image_per_page for a single row
-        horizontal_position: "center" # left/center/right placement on screen
-        vertical_position: "center" # top/center/bottom placement
-        position_offset: 0 # minimum gap (px) from screen edges - see below for advanced options
-        respect_work_area: true # clamp to OS work area (avoids Windows taskbar)
-        show_buttons: false
         orientation: "landscape"
-        image_spacing: 8
-        lazy_load: true
-        lazy_load_fadein: 400
         image_corner_radius: 0
       callbacks:
         on_left: "toggle_gallery"
