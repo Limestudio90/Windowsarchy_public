@@ -69,14 +69,11 @@ widgets:
     options:
       label: "<span>{wifi_icon}</span>"
       label_alt: "<span>{wifi_icon}</span> {wifi_name}"
-      # Stesse icone della barra di Omarchy (shell/plugins/panels/network/Model.js)
       wifi_icons: ["\U000F092F", "\U000F091F", "\U000F0922", "\U000F0925", "\U000F0928"]
       ethernet_icon: "\U000F0200"
       get_exact_wifi_strength: true
       update_interval: 5000
       callbacks:
-        # Pannello in stile Omarchy (scripts/wifi-panel.pyw); il centrale apre il menu di YASB.
-        # Con start il cmd esce subito: se restasse figlio di YASB ne bloccherebbe il riavvio
         on_left: 'exec start pythonw %USERPROFILE%\.config\komorebi-scripts\wifi-panel.pyw'
         on_middle: "toggle_menu"
         on_right: "toggle_label"
@@ -341,8 +338,6 @@ widgets:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\udb83\ude09</span>"
-    # Example path to folder with images. Can be a single string or a list of strings.
-    # image_path: "C:\\Users\\{Username}\\Images" 
       image_path: 
         - "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Catppuccin"
       change_automatically: false # Automatically change wallpaper
@@ -418,11 +413,10 @@ widgets:
       scrolling_label:
         enabled: false
         update_interval_ms: 33
-        style: "left"  # can be "left", "right", "bounce", "bounce-ease"
+        style: "left"
         separator: " | "
         label_padding: 0
         always_scroll: false
-      # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
         ease_slope: 20
         ease_pos: 0.8
         ease_min: 0.5
