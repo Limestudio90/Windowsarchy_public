@@ -19,6 +19,7 @@ This repository holds the files that the **Windowsarchy** YASB theme (submitted 
 | `.config/komorebi-scripts/set-theme.ps1`, `theme-menu.ps1`, `make-theme-previews.ps1` | Switch a whole theme (bar, window borders, launcher) from a menu with previews (`Win + Ctrl + Shift + Space`). |
 | `.config/komorebi-scripts/fix-opacity.ps1` | Fixes windows left semi-transparent after fullscreen (`Win + Shift + T`, `Win + Ctrl + T` for all). |
 | `.config/komorebi-scripts/eq.ps1`, `.local/bin/eq.cmd`, `eqapo-presets/` | System equalizer through [Equalizer APO](https://sourceforge.net/projects/equalizerapo/) (`Win + Ctrl/Alt/Shift + E`). |
+| `.config/winfetch/config.ps1` | [winfetch](https://github.com/lptstr/winfetch) settings: the system-info panel shown in the terminal, Omarchy style. Run `winfetch`. |
 | `.config/windowsarchy/` | Themes (`windowsarchy`, `catppuccin`, `kde-breeze-dark-stable`, `ubuntu-yaru`) and the Flow Launcher template. |
 
 Script comments are partly in Italian. The code and the shortcuts file are documented in English.
@@ -28,6 +29,8 @@ Script comments are partly in Italian. The code and the shortcuts file are docum
 - Windows 11
 - [YASB](https://github.com/amnweb/yasb), [Komorebi](https://github.com/LGUG2Z/komorebi) and [whkd](https://github.com/LGUG2Z/whkd)
 - Fonts: [JetBrainsMono Nerd Font Propo](https://www.nerdfonts.com/font-downloads) and Segoe Fluent Icons (included in Windows 11)
+- Optional: [winfetch](https://github.com/lptstr/winfetch) (`Install-Script winfetch`) for the terminal system-info panel, and [Oh My Posh](https://ohmyposh.dev) with its default theme for the prompt (add `oh-my-posh init pwsh | Invoke-Expression` to your PowerShell profile)
+- Optional: [Windows Terminal](https://github.com/microsoft/terminal)
 - Optional: [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) (`Win + Space`)
 - Optional: [Equalizer APO](https://sourceforge.net/projects/equalizerapo/) for the `eq` shortcuts
 - Wi-Fi panel: Python 3.10+ with `pythonw` in PATH, then
